@@ -1,5 +1,5 @@
 [package]
-name = "boxed_alien_txt"
+name = "bevy-tutorial-minesweeper"
 version = "0.1.0"
 edition = "2021"
 

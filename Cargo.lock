@@ -462,6 +462,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "bevy-tutorial-minesweeper"
+version = "0.1.0"
+dependencies = [
+ "bevy",
+ "bevy-inspector-egui",
+ "bevy_web_asset",
+ "board_plugin",
+ "colored",
+ "console_error_panic_hook",
+ "egui",
+ "env_logger",
+ "log",
+ "wasm-bindgen",
+ "web-log",
+ "web-sys",
+]
+
+[[package]]
 name = "bevy_animation"
 version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1136,24 +1154,6 @@ dependencies = [
  "egui",
  "rand 0.8.5",
  "serde",
-]
-
-[[package]]
-name = "boxed_alien_txt"
-version = "0.1.0"
-dependencies = [
- "bevy",
- "bevy-inspector-egui",
- "bevy_web_asset",
- "board_plugin",
- "colored",
- "console_error_panic_hook",
- "egui",
- "env_logger",
- "log",
- "wasm-bindgen",
- "web-log",
- "web-sys",
 ]
 
 [[package]]
