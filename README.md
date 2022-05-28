@@ -1,0 +1,40 @@
+# Boxed Alien TXT(箱詰めの異邦人 テキストバージョン)
+
+## to Run
+
+```
+trunk serve
+```
+
+## コンパイルの使い分け
+
+```
+#開発ビルド(デバッグ ALL ON)
+cargo build
+
+# リリースビルド
+cargo build --release
+
+# リリースビルド(開発用デバッグツールON)
+cargo build --release -C debug_assert
+
+#
+cargo test
+
+#
+cargo bench
+```
+
+## Files
+
+- src
+- assets
+- dist
+- scripts
+  - prepare_build_install_package -> to build
+- .cargo
+  - config.toml.example -> if you want use it, copy this to .cargo/config.toml
+- Makefile.toml -> for `cargo make` command
+- index.html -> for Browser
+
+## Structure

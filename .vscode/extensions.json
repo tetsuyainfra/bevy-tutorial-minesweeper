@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "bungcip.better-toml",
+    // "rust-lang.rust", # defaultのは使わない
+    "rust-lang.rust-analyzer"
+  ]
+}

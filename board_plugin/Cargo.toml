@@ -1,0 +1,25 @@
+[package]
+name = "board_plugin"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = { version = "0.7.0" }
+# bevy = { version = "0.7.0", features = ["dynamic"] }
+
+# Serialize
+serde = "1.0"
+# Random
+rand = "0.8"
+
+# for WASM
+console_error_panic_hook = "0.1"
+
+# Console Debug
+colored = "2.0"
+egui = "0.18"
+bevy-inspector-egui = "0.11"
+# bevy-inspector-egui = "0.10" # bevy_editor_pls deps
+# bevy_editor_pls = { git = "https://github.com/jakobhellermann/bevy_editor_pls" }
