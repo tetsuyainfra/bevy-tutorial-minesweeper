@@ -1,10 +1,10 @@
 // lib.rs
-mod bounds;
-mod events;
-mod systems;
 
+mod bounds;
 pub mod components;
+pub mod events;
 pub mod resources;
+mod systems;
 
 use bevy::ecs::schedule::StateData;
 use bevy::log;
@@ -23,6 +23,9 @@ use resources::BoardPosition;
 use resources::TileSize;
 
 use crate::components::*;
+use crate::events::BoardCompletedEvent;
+use crate::events::BombExplosionEvent;
+use crate::events::TileMarkEvent;
 use crate::events::TileTriggerEvent;
 
 pub struct BoardPlugin<T> {
@@ -44,12 +47,16 @@ impl<T: StateData> Plugin for BoardPlugin<T> {
         // We handle uncovering even if the state is inactive
         .add_system_set(
             SystemSet::on_in_stack_update(self.running_state.clone())
-                .with_system(systems::uncover::uncover_tiles),
+                .with_system(systems::uncover::uncover_tiles)
+                .with_system(systems::mark::mark_tiles), // We add our new mark system
         )
         .add_system_set(
             SystemSet::on_exit(self.running_state.clone()).with_system(Self::cleanup_board),
         )
-        .add_event::<TileTriggerEvent>();
+        .add_event::<TileTriggerEvent>()
+        .add_event::<TileMarkEvent>()
+        .add_event::<BombExplosionEvent>()
+        .add_event::<BoardCompletedEvent>();
 
         #[cfg(debug_assertions)]
         {
@@ -153,6 +160,7 @@ impl<T> BoardPlugin<T> {
             tile_size,
             covered_tiles,
             entity: board_entity,
+            marked_tiles: Vec::new(),
         });
 
         if options.safe_start {
