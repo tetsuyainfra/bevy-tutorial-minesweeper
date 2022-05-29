@@ -16,6 +16,7 @@ impl Default for SpriteMaterial {
     }
 }
 
+#[derive(Debug, Clone)]
 pub struct BoardAssets {
     /// label
     pub label: String,
