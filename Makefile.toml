@@ -1,9 +1,46 @@
-# [tasks.build]
-# command = "cargo"
-# args = ["build"]
-# dependencies = ["clean"]
+[tasks.clean]
+command = "cargo"
+args = ["clean"]
 
 [tasks.serve]
 command = "trunk"
 args = ["serve"]
 dependencies = []
+
+#
+# Development Build
+#
+[tasks.build]
+linux_alias = "build_linux"
+windows_alias = "build_windows"
+
+[tasks.build_linux]
+description = "Build Linux"
+workspace = false
+command = "cargo"
+args = ["build"]
+
+[tasks.build_windows]
+description = "Build Windows"
+workspace = false
+command = "cargo"
+args = ["build", "--target=x86_64-pc-windows-msvc"]
+
+#
+# Release Build
+#
+[tasks.release]
+linux_alias = "release_linux"
+windows_alias = "relese_windows"
+
+[tasks.release_linux]
+description = "Release build Linux"
+workspace = false
+command = "cargo"
+args = ["build", "--release"]
+
+[tasks.release_windows]
+description = "Release build Windows"
+workspace = false
+command = "cargo"
+args = ["build", "--release", "--target=x86_64-pc-windows-msvc"]

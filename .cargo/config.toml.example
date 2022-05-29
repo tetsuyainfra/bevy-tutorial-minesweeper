@@ -5,6 +5,7 @@
 # [target.wasm32-unknown-unknown]
 # runner = "wasm-server-runner"
 
+# for Croscompile On Linux For Windows
 [target.x86_64-pc-windows-msvc]
 linker = "lld"
 rustflags = [
