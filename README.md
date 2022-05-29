@@ -1,4 +1,9 @@
-# Boxed Alien TXT(箱詰めの異邦人 テキストバージョン)
+# Bevy Tutorial Minesweeper
+
+see original tutorial article and repository
+
+- https://dev.to/qongzi/bevy-minesweeper-introduction-4l7f
+- https://gitlab.com/qonfucius/minesweeper-tutorial/
 
 ## to Run
 
